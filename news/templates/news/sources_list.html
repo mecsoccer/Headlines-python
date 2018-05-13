@@ -1,0 +1,14 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block body %}
+    {% if list_of_sources %}
+        <ul class="cslist">
+        {% for source in list_of_sources %}
+            <li class="slist">
+                <a href="/news/sources/{{ source.url_name }}">{{ source.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

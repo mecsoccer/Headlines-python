@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  {% load static %}
+<html lang="en">
+<head>
+    <title>headlines</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="{% static 'news/stylesheets/style.css' %}">
+    <link rel="stylesheet" href="{% static 'news/stylesheets/responsive.css' %}">
+    <link rel="icon" href="{% static 'news/imgs/logo.png' %}" type="image/x-icon">
+</head>
+<body>
+<div class="content">
+    <div class="header" id="header">
+        <a class="menu" id="menu">
+            <svg xmlns="http://www.w3.org/20d00/svg" viewBox="0 0 24 24">
+                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+            </svg>
+        </a>
+        <h1 class="site-name">
+            <a href="/news">Headlines</a>
+        </h1>
+    </div>
+    <div class="nav-bar">
+        <li class="nav-button"><a href="{% url 'news:index' %}">Home</a></li>
+        <li class="nav-button"><a href="{% url 'news:index' %}">Countries</a></li>
+        <li class="nav-button"><a href="{% url 'news:list_sources' %}">Sources</a></li>
+        <li class="nav-button"><a href="">Feedback</a></li>
+        <li class="nav-button"><a href="">More</a></li>
+    </div>
+    <div class="back">
+        <a href="#header">back to top</a>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+    <script src="javascripts/idb.js" async></script>
+    <script src="/javascripts/newsController.js" async></script>
+</div>
+<hr>
+<section class="footer">
+    <div class="facebook"><a class="zocial-facebook" href=""></a><p>Like Us</p></div>
+    <div class="twitter"><a class="zocial-twitter" href=""></a><p>Follow Us</p></div>
+    <div class="email"><a class="zocial-gmail" href=""></a><p>head@line.com</p></div>
+</section>
+<script src="{% static 'news/javascripts/toggle.js' %}" async></script>
+<script src="{% static '/javascripts/swreg.js' %}" async></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block body %}
+    {% if list_of_countries %}
+        <ul class="cslist">
+        {% for country in list_of_countries %}
+            <li class="clist">
+                <a href="/news/countries/{{ country.url_name }}">{{ country.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

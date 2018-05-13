@@ -1,0 +1,18 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block body %}
+        {% if articles %}
+        <ul class="headline">
+        {% for article in articles %}
+            <li>
+                <img src="{{ article.urlToImage }}" alt="news pic">
+                <div>
+                    <strong><a class="title" href="{{ article.url }}" target="_blank">{{ article.title }}</a></strong>
+                    <p>{{ article.description }}</p>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+{% endblock %}
